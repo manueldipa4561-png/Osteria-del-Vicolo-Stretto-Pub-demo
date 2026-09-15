@@ -56,6 +56,69 @@ Una pagina Eatbu ancora online mostra orari 17:00–03:00 tutti i giorni, un num
 4. Nightlife resa con ritmo, equalizer e segnaletica, non gallery standard.
 5. Orari e social diventano elementi di conversione con mobile action dock.
 
+## Menu upgrade
+
+Aggiunta una pagina dedicata `menu.html` per rispondere alla richiesta del proprietario e mostrare concretamente come potrebbe funzionare un menu digitale completo.
+
+### Architettura scelta
+
+- pagina `menu.html` separata, raggiungibile dalla navigazione principale;
+- CTA contestuale nella sezione food della homepage;
+- link nel footer;
+- voce Menu nel dock mobile;
+- navigazione interna sticky per categorie;
+- scroll-spy / stato attivo della categoria;
+- ritorno chiaro alla homepage e ai contatti.
+
+La pagina è pensata prima di tutto come prodotto mobile: scansione rapida, titoli grandi, prezzi allineati, categorie thumb-friendly e nessuna interazione obbligatoria per leggere i contenuti.
+
+### Contenuto simulato
+
+Il menu NON è il menu ufficiale del locale.
+
+Le sole categorie trattate come fatti documentati sono quelle emerse dalle fonti pubbliche: hamburger, panini, carne, birra, cocktail e vino.
+
+Nomi dei piatti, descrizioni, allergeni e prezzi presenti in `menu.html` sono placeholder espliciti. La pagina usa etichette come `ESEMPIO`, `MENU DEMO`, `NON È IL MENU ATTUALE` e prezzi `€ —` per evitare che dati inventati vengano interpretati come offerta reale.
+
+Nessuna voce demo viene inserita nei dati strutturati Schema.org.
+
+### Direzione creativa
+
+Il menu estende la grammatica visiva del sito invece di introdurre un template da ristorante:
+
+- gig poster × pub menu × editorial typography;
+- palette carbone / carta calda / ambra / rosso;
+- numerazione verticale delle sezioni;
+- categorie trattate come scaletta della serata;
+- poster wall tipografico originale;
+- niente food cards standard, chalkboard cliché o fotografie di terzi.
+
+### Future replacement
+
+Il contenuto è volutamente semplice da sostituire. Quando il proprietario fornirà il menu reale sarà possibile aggiornare:
+
+- nomi;
+- ingredienti / descrizioni;
+- prezzi;
+- allergeni;
+- varianti;
+- categorie;
+- ordine delle categorie;
+
+senza ridisegnare l'interfaccia e senza introdurre un CMS o backend per la demo statica.
+
+### Accessibilità e performance
+
+- HTML semantico e heading hierarchy;
+- skip link;
+- navigazione tastiera e focus visibile;
+- touch target mobile minimi;
+- categoria attiva non comunicata solo tramite colore;
+- `prefers-reduced-motion`;
+- progressive reveal con fail-safe;
+- nessuna libreria o framework aggiuntivo;
+- nessuna immagine o richiesta esterna necessaria al menu.
+
 ## Funzionalità
 
 - responsive navigation
@@ -73,10 +136,67 @@ Una pagina Eatbu ancora online mostra orari 17:00–03:00 tutti i giorni, un num
 - custom 404
 - Netlify configuration
 - security headers
+- dedicated simulated digital menu
+- sticky menu category navigation
+- active category state / scroll-spy
 
 ## Responsive QA
 
-Eseguito localmente con Chromium sui viewport: 320, 360, 375, 390, 430, 768, 1024 e 1440 px. Verificati overflow orizzontale, menu mobile, console/page errors e layout principali. Nessun overflow o errore JS rilevato nella versione caricata.
+### Homepage — QA precedente
+
+La homepage era già stata verificata localmente con Chromium sui viewport 320, 360, 375, 390, 430, 768, 1024 e 1440 px, senza overflow o errori JavaScript rilevati nella versione precedente. L'upgrade attuale modifica soltanto link/testo di ingresso al menu e non cambia il CSS della homepage.
+
+### Menu page — QA upgrade 15/09/2026
+
+QA browser-rendered eseguito con Chromium sulla versione finale di `menu.html`, `menu.css` e `menu.js` ai viewport:
+
+- 320 px
+- 360 px
+- 375 px
+- 390 px
+- 430 px
+- 768 px
+- 1024 px
+- 1440 px
+
+Controlli eseguiti:
+
+- overflow orizzontale;
+- menu mobile open / close + Escape;
+- menu mobile posizionato sotto l'header;
+- sticky category navigation;
+- category active state;
+- scrolling orizzontale intenzionale della category bar;
+- wrap di un nome menu volutamente molto lungo;
+- descrizioni multilinea;
+- categoria con più elementi;
+- prezzi placeholder;
+- touch target mobile;
+- reveal completion;
+- reduced-motion;
+- ritorno a `index.html`;
+- errori JavaScript / console.
+
+Problemi trovati e corretti durante il primo pass:
+
+1. overflow laterale a 320 e 360 px;
+2. target footer troppo stretti;
+3. reveal che potevano restare nascosti durante scroll sintetici estremamente rapidi;
+4. stato attivo della categoria finale non sempre deterministico dopo click;
+5. heading finale troppo largo a 320 px.
+
+Fix applicati:
+
+- contenimento della category navigation;
+- riduzione/containment del poster wall su mobile;
+- min-width dei link footer;
+- fail-safe reveal a 1,2 secondi;
+- sincronizzazione ritardata dello stato categoria dopo click;
+- tipografia finale mobile ridimensionata e `overflow-wrap`.
+
+Esito secondo pass: **PASS sugli 8 viewport** per la pagina menu, con zero overflow orizzontale, zero target mobile sotto soglia, zero reveal rimasti nascosti e zero errori console.
+
+Nota ambiente QA: il runtime blocca la navigazione Chromium verso `localhost` e `file://`; per il test browser-rendered la stessa versione finale HTML/CSS/JS è stata caricata in-memory tramite Playwright `set_content`, quindi rendering e comportamento del menu sono stati effettivamente eseguiti in Chromium. Il controllo finale sul deployment Netlify resta consigliato per verificare anche routing/headers del server reale.
 
 ## Deploy Netlify
 
