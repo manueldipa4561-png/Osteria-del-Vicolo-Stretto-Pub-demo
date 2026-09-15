@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0d0c">
+  <title>Menu demo · Osteria del Vicolo Stretto Pub</title>
+  <meta name="description" content="Menu digitale dimostrativo per Osteria del Vicolo Stretto Pub a Colorno. Struttura e contenuti di esempio da sostituire con il menu ufficiale.">
+  <meta property="og:title" content="Menu demo · Osteria del Vicolo Stretto Pub">
+  <meta property="og:description" content="Una dimostrazione di come potrebbe funzionare il menu digitale di Vicolo Stretto.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <a class="skip-link" href="#menu-main">Vai al menu</a>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="Vicolo Stretto, torna alla homepage">
+      <span class="brand-mark">VS</span>
+      <span class="brand-copy"><strong>VICOLO STRETTO</strong><small>Osteria · Pub · Colorno</small></span>
+    </a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false"><span class="sr-only">Apri menu di navigazione</span><i></i><i></i></button>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a class="is-current" href="menu.html" aria-current="page">Menu</a>
+      <a href="index.html#notte">La notte</a>
+      <a href="index.html#visita">Contatti</a>
+      <a class="nav-cta" href="tel:+393667349781">Chiama</a>
+    </nav>
+    <div class="scroll-progress" aria-hidden="true"><i data-progress></i></div>
+  </header>
+
+  <main id="menu-main">
+    <section class="menu-hero" aria-labelledby="menu-title">
+      <div class="poster-wall" aria-hidden="true"><span>MENU</span><span>MENU</span><span>MENU</span></div>
+      <div class="menu-hero-copy reveal">
+        <p class="eyebrow">VICOLO STRETTO / MENU EXPERIENCE</p>
+        <h1 id="menu-title">Prima si sceglie.<br><em>Poi si resta.</em></h1>
+        <p class="hero-lead">Una simulazione di come potrebbe vivere online il menu del Vicolo: leggibile al tavolo, rapido da aggiornare e coerente con l'identità del pub.</p>
+      </div>
+      <aside class="demo-stamp reveal" aria-label="Avviso menu dimostrativo">
+        <strong>MENU DEMO</strong>
+        <p>Piatti, descrizioni e prezzi in questa pagina sono esempi grafici. Verranno sostituiti con il menu ufficiale del locale.</p>
+        <span>NON È IL MENU ATTUALE</span>
+      </aside>
+    </section>
+
+    <nav class="category-nav" aria-label="Categorie del menu demo" data-category-nav>
+      <div class="category-track">
+        <a href="#burger" data-category-link="burger">01 Burger</a>
+        <a href="#panini" data-category-link="panini">02 Panini</a>
+        <a href="#cucina" data-category-link="cucina">03 Cucina</a>
+        <a href="#birre" data-category-link="birre">04 Birre</a>
+        <a href="#cocktail" data-category-link="cocktail">05 Cocktail</a>
+        <a href="#vini" data-category-link="vini">06 Vini</a>
+      </div>
+    </nav>
+
+    <section class="menu-intro">
+      <div class="menu-intro-grid reveal">
+        <p class="section-number">00 / COME FUNZIONA</p>
+        <p class="intro-big">Un menu vero, quando arriverà, potrà cambiare nomi, descrizioni, prezzi e categorie <strong>senza cambiare il design.</strong></p>
+        <p class="intro-small">Le categorie hamburger, panini, carne, birra, cocktail e vino sono documentate nelle fonti pubbliche. Tutti gli elementi qui sotto sono invece esempi dimostrativi dell'interfaccia.</p>
+      </div>
+    </section>
+
+    <div class="menu-ledger">
+      <section class="menu-category" id="burger" data-category="burger" aria-labelledby="burger-title">
+        <header class="category-head reveal"><span class="category-no">01</span><div><p>PIASTRA / PANE / SERA</p><h2 id="burger-title">Burger</h2></div><span class="category-mark">DEMO</span></header>
+        <div class="menu-items">
+          <article class="menu-item reveal"><div><h3>Burger / 01 <small>ESEMPIO</small></h3><p>Descrizione dimostrativa: ingredienti e ricetta da sostituire con la proposta reale del locale.</p><span class="allergen-note">Allergeni: da definire nel menu ufficiale</span></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Burger con un nome volutamente molto lungo per testare il layout <small>ESEMPIO</small></h3><p>Descrizione di esempio su due righe, utile a mostrare come il sistema gestisce testi più lunghi senza perdere leggibilità.</p><span class="allergen-note">Allergeni: da definire nel menu ufficiale</span></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Burger / 03 <small>ESEMPIO</small></h3><p>Spazio predisposto per nome, ingredienti, eventuali varianti e note utili al cliente.</p><span class="allergen-note">Allergeni: da definire nel menu ufficiale</span></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Burger / 04 <small>ESEMPIO</small></h3><p>Un quarto elemento dimostra come la categoria può crescere senza trasformarsi in una griglia pesante.</p><span class="allergen-note">Allergeni: da definire nel menu ufficiale</span></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Burger / 05 <small>ESEMPIO</small></h3><p>Contenuto placeholder facilmente sostituibile con una voce reale.</p><span class="allergen-note">Allergeni: da definire nel menu ufficiale</span></div><strong class="price">€ —</strong></article>
+        </div>
+      </section>
+
+      <section class="menu-category" id="panini" data-category="panini" aria-labelledby="panini-title">
+        <header class="category-head reveal"><span class="category-no">02</span><div><p>VELOCE / DIRETTO / PUB</p><h2 id="panini-title">Panini</h2></div><span class="category-mark">DEMO</span></header>
+        <div class="menu-items">
+          <article class="menu-item reveal"><div><h3>Panino / 01 <small>ESEMPIO</small></h3><p>Nome, ingredienti e descrizione saranno sostituiti con il contenuto reale.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Panino / 02 <small>ESEMPIO</small></h3><p>Struttura pensata per essere aggiornata in pochi secondi senza toccare il layout.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Panino / 03 <small>ESEMPIO</small></h3><p>Descrizione dimostrativa per verificare ritmo, spaziatura e lettura al tavolo.</p></div><strong class="price">€ —</strong></article>
+        </div>
+      </section>
+
+      <section class="menu-category menu-category-dark" id="cucina" data-category="cucina" aria-labelledby="cucina-title">
+        <header class="category-head reveal"><span class="category-no">03</span><div><p>DALLA CUCINA / ESEMPIO</p><h2 id="cucina-title">Dalla cucina</h2></div><span class="category-mark">DEMO</span></header>
+        <div class="menu-items">
+          <article class="menu-item reveal"><div><h3>Piatto / 01 <small>ESEMPIO</small></h3><p>Spazio dimostrativo per una proposta di carne o altra voce effettivamente presente nel menu reale.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Piatto / 02 <small>ESEMPIO</small></h3><p>Nessuna ricetta viene attribuita al locale: questa voce mostra soltanto la struttura.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Piatto / 03 <small>ESEMPIO</small></h3><p>La sezione può ospitare varianti, disponibilità e note senza introdurre un backend.</p></div><strong class="price">€ —</strong></article>
+        </div>
+      </section>
+
+      <section class="menu-category" id="birre" data-category="birre" aria-labelledby="birre-title">
+        <header class="category-head reveal"><span class="category-no">04</span><div><p>SPINA / BOTTIGLIA / ESEMPIO</p><h2 id="birre-title">Birre</h2></div><span class="category-mark">DEMO</span></header>
+        <div class="menu-items drinks">
+          <article class="menu-item reveal"><div><h3>Birra / 01 <small>ESEMPIO</small></h3><p>Tipologia · formato · gradazione: dati da sostituire con la selezione reale.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Birra / 02 <small>ESEMPIO</small></h3><p>Il formato supporta informazioni tecniche senza sacrificare la scansione rapida.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Birra / 03 <small>ESEMPIO</small></h3><p>Voce placeholder per mostrare una lista più ampia.</p></div><strong class="price">€ —</strong></article>
+        </div>
+      </section>
+
+      <section class="menu-category menu-category-red" id="cocktail" data-category="cocktail" aria-labelledby="cocktail-title">
+        <header class="category-head reveal"><span class="category-no">05</span><div><p>DOPO CENA / ESEMPIO</p><h2 id="cocktail-title">Cocktail</h2></div><span class="category-mark">DEMO</span></header>
+        <div class="menu-items">
+          <article class="menu-item reveal"><div><h3>Cocktail / 01 <small>ESEMPIO</small></h3><p>Nome e composizione non sono riferiti a un cocktail attualmente servito.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Cocktail / 02 <small>ESEMPIO</small></h3><p>Layout predisposto per ingredienti, signature drink e opzioni analcoliche.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Cocktail / 03 <small>ESEMPIO</small></h3><p>Contenuto da sostituire con la carta reale.</p></div><strong class="price">€ —</strong></article>
+        </div>
+      </section>
+
+      <section class="menu-category" id="vini" data-category="vini" aria-labelledby="vini-title">
+        <header class="category-head reveal"><span class="category-no">06</span><div><p>CALICE / BOTTIGLIA / ESEMPIO</p><h2 id="vini-title">Vini</h2></div><span class="category-mark">DEMO</span></header>
+        <div class="menu-items drinks">
+          <article class="menu-item reveal"><div><h3>Vino / 01 <small>ESEMPIO</small></h3><p>Etichetta, produttore, annata e formato saranno inseriti solo dal menu ufficiale.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Vino / 02 <small>ESEMPIO</small></h3><p>Struttura adatta a una carta breve o a una selezione più estesa.</p></div><strong class="price">€ —</strong></article>
+          <article class="menu-item reveal"><div><h3>Vino / 03 <small>ESEMPIO</small></h3><p>Voce dimostrativa senza attribuzione di prodotti reali.</p></div><strong class="price">€ —</strong></article>
+        </div>
+      </section>
+    </div>
+
+    <section class="menu-note" aria-labelledby="note-title">
+      <div class="menu-note-inner reveal">
+        <p class="section-number">FINE / DEMO</p>
+        <h2 id="note-title">Questo è il contenitore.<br><em>Il menu vero lo riempiamo insieme.</em></h2>
+        <p>La pagina è già predisposta per ricevere nomi, ingredienti, prezzi, allergeni, varianti e categorie reali. Nessuno dei contenuti dimostrativi sopra è presentato come offerta attuale del Vicolo Stretto.</p>
+        <div class="final-actions"><a class="button button-amber" href="tel:+393667349781">Chiama</a><a class="button button-outline-light" href="index.html#visita">Contatti e orari</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>VICOLO STRETTO</strong><span>Osteria · Pub · Colorno</span></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="tel:+393667349781">Telefono</a><a href="https://www.instagram.com/vicolostrettopub/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Osteria+del+Vicolo+Stretto+Pub+Via+XX+Settembre+23+Colorno" target="_blank" rel="noopener noreferrer">Maps ↗</a></div>
+    <p>Menu e sito dimostrativi · Punto Due Studio</p>
+  </footer>
+
+  <nav class="mobile-dock" aria-label="Azioni rapide"><a class="is-current" href="menu.html">Menu</a><a href="tel:+393667349781">Chiama</a><a href="https://www.google.com/maps/search/?api=1&query=Osteria+del+Vicolo+Stretto+Pub+Via+XX+Settembre+23+Colorno" target="_blank" rel="noopener noreferrer">Maps</a></nav>
+  <script src="menu.js" defer></script>
+</body>
+</html>
